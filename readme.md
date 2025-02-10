@@ -11,3 +11,5 @@ node 22+ because of the JSON import in koha-sql.js
 `node scrape.js` to get data off of LC's website and into a JSON file
 
 `node koha-sql.js` to take the JSON and turn it into SQL `INSERT` statements for Koha authorized values.
+
+`node csv vocabs.json` to convert the JSON to CSV.

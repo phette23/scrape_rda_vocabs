@@ -16,7 +16,8 @@ function printrow(category, authorised_value, lib, lib_opac) {
 `- category: ${category}
   authorised_value: ${authorised_value}
   lib: ${lib}
-  lib_opac: ${lib_opac}`)
+  lib_opac: ${lib_opac}
+`)
 }
 for (const [name, entries] of Object.entries(vocabs)) {
     entries.terms.forEach((term, index) => {

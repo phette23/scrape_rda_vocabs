@@ -5,21 +5,23 @@ import * as fs from 'node:fs'
 const datafile = process.argv[2] ? process.argv[2] : 'vocabs.json'
 const vocabs = JSON.parse(fs.readFileSync(datafile))
 
-function printrow() {
+function printRow() {
     console.log('"' + Array.prototype.join.call(arguments, '","') + '"')
 }
 
 // header row
-printrow('category','authorised_value', 'lib', 'lib_opac')
+printRow('category','authorised_value', 'lib', 'lib_opac')
 const termCSV = (category, type) => {
     type.terms.forEach((term, index) => {
-        printrow(category, term, term, term)
+        if (category.match("CARRIER") && term.match("other")) return
+        printRow(category, term, term, term)
     })
+    if (category.match("CARRIER")) printRow(category, 'other', 'other', 'other')
 }
 // make the text descriptions of codes their corresponding terms
 const codeCSV = (category, type) => {
     type.codes.forEach((term, index) => {
-        printrow(category, term, type.terms[index], type.terms[index])
+        printRow(category, term, type.terms[index], type.terms[index])
     })
 }
 

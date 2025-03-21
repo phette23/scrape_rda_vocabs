@@ -11,21 +11,21 @@ function printrow() {
 
 // header row
 printrow('category','authorised_value', 'lib', 'lib_opac')
-const termSql = (category, type) => {
+const termCSV = (category, type) => {
     type.terms.forEach((term, index) => {
         printrow(category, term, term, term)
     })
 }
 // make the text descriptions of codes their corresponding terms
-const codeSql = (category, type) => {
+const codeCSV = (category, type) => {
     type.codes.forEach((term, index) => {
         printrow(category, term, type.terms[index], type.terms[index])
     })
 }
 
-termSql("RDACARRIER", vocabs.carrier)
-codeSql("RDACARRIER_CODE", vocabs.carrier)
-termSql("RDACONTENT", vocabs.content)
-codeSql("RDACONTENT_CODE", vocabs.content)
-termSql("RDAMEDIA", vocabs.media)
-codeSql("RDAMEDIA_CODE", vocabs.media)
+termCSV("RDACARRIER", vocabs.carrier)
+codeCSV("RDACARRIER_CODE", vocabs.carrier)
+termCSV("RDACONTENT", vocabs.content)
+codeCSV("RDACONTENT_CODE", vocabs.content)
+termCSV("RDAMEDIA", vocabs.media)
+codeCSV("RDAMEDIA_CODE", vocabs.media)

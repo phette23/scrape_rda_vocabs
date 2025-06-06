@@ -187,4 +187,3 @@ VALUES ('RDAMEDIA_CODE', 's', 'audio', 'audio'),
 ('RDAMEDIA_CODE', 'v', 'video', 'video'),
 ('RDAMEDIA_CODE', 'x', 'other', 'other'),
 ('RDAMEDIA_CODE', 'z', 'unspecified', 'unspecified');
- Wrote koha.sql file

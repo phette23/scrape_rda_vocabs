@@ -40,5 +40,5 @@ codeSQL("RDAMEDIA_CODE", vocabs.media)
 console.log(sql)
 fs.writeFile('koha.sql', sql, err => {
     if (err) return console.error("Error writing koha.sql file", err)
-    console.log("Wrote koha.sql file")
+    console.error("Wrote koha.sql file")
 })
